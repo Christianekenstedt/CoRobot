@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Compliance Robot</h1>
+    <p class="lead">Använd maskinlärning för att se om ett regelverk gäller för fördefinerade produkter (VISA- och betalkort).</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Prova</h2>
+        <div>
+            <div class="input-group" id="fileInputBox" style="border: groove; padding: 5px;">
+                <div>
+                    
+                    <div>
+                        <label style="display:block;" for="urlInput">URL <span style="margin-left:3px;" class="label label-default" data-toggle="tooltip" data-placement="right" title="URL från Eur-Lex i html-format">?</span></label>
+                        
+                    </div> 
+                    <input class="form-control" style="display:block;" type="url" placeholder="t.ex. http://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32015L2366&from=EN" id="urlInput" />
+                </div>
+                <div class="text-center" style="margin-top: 5px;">
+                    <h4>-- ELLER --</h4>
+                </div>
+                <div>
+                    <label for="fileInput">Upload a file <span style="margin-left:3px;" class="label label-default" data-toggle="tooltip" data-placement="right" title="Format som stöds .txt, .pdf och .html">?</span></label>
+                    <input type="file" id="fileInput" />
+                </div>
+            </div>
+            <div style="padding-top: 5px">
+                <button class="btn btn-success ">Upload</button>
+            </div>
+        </div>
+    </div>
+</div>
