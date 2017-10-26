@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
             return View(new UploadFileViewModel());
         }
 
+        //TODO: Change method to call API and pass the uploaded document.
         [HttpPost]
         public ActionResult Index(UploadFileViewModel model)
         {
