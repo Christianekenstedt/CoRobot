@@ -1,0 +1,63 @@
+﻿@model WebApplication1.Models.ResultViewModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2>Result</h2>
+
+<h3>Results</h3>
+<div>
+    <h4>ResultViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.scoredLabel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.scoredLabel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CCAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CCAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ECAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ECAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GCAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GCAT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MCAT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MCAT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <a class="btn btn-success" onclick="location.href='@Url.Action("Index", "Home")'">Home</a>
+        </div>
+    }
+</div>

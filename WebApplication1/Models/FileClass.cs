@@ -26,4 +26,22 @@ namespace WebApplication1.Models
 
     }
 
+    public class ResultViewModel
+    {
+        [Display(Name = "Scored Label")]
+        public string scoredLabel { get; set; }
+
+        [Display(Name = "Scored Probabilities for Class: CCAT")]
+        public string CCAT { get; set; }
+
+        [Display(Name = "Scored Probabilities for Class: ECAT")]
+        public string ECAT { get; set; }
+
+        [Display(Name = "Scored Probabilities for Class: GCAT")]
+        public string GCAT { get; set; }
+
+        [Display(Name = "Scored Probabilities for Class: MCAT")]
+        public string MCAT { get; set; }
+    }
+
 }
