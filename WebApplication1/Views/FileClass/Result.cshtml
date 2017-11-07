@@ -53,11 +53,7 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
             <a class="btn btn-success" onclick="location.href='@Url.Action("Index", "Home")'">Home</a>
         </div>
-    }
 </div>
