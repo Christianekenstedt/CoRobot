@@ -81,6 +81,7 @@ namespace WebApplication1.Controllers
                     var resJo = jo["Results"]["output1"][0];
                     System.Diagnostics.Debug.WriteLine("Scored Label: " + resJo["Scored Labels"] + "\nScored Probabilities for Class \"CCAT\": " + resJo["Scored Probabilities for Class \"CCAT\""] + "\nScored Probabilities for Class \"ECAT\": " + resJo["Scored Probabilities for Class \"ECAT\""] + "\nScored Probabilities for Class \"GCAT\": " + resJo["Scored Probabilities for Class \"GCAT\""] + "\nScored Probabilities for Class \"MCAT\": " + resJo["Scored Probabilities for Class \"MCAT\""] + "\n");
 
+                    List<float> listOfPredictions = new List<float>();
                     // Kolla om det är gilltig kod först
                     ResultViewModel view = new ResultViewModel();
                     view.scoredLabel = (string)resJo["Scored Labels"];
@@ -89,6 +90,26 @@ namespace WebApplication1.Controllers
                     view.GCAT = (string)resJo["Scored Probabilities for Class \"GCAT\""];
                     view.MCAT = (string)resJo["Scored Probabilities for Class \"MCAT\""];
 
+
+                    
+                    // Fixa mer dynamisk kod här.
+                    listOfPredictions.Add((float)resJo["Scored Probabilities for Class \"CCAT\""]);
+                    listOfPredictions.Add((float)resJo["Scored Probabilities for Class \"ECAT\""]);
+                    listOfPredictions.Add((float)resJo["Scored Probabilities for Class \"GCAT\""]);
+                    listOfPredictions.Add((float)resJo["Scored Probabilities for Class \"MCAT\""]);
+
+                   
+                    float maxFloat = 0;
+                    foreach(float i in listOfPredictions)
+                    {
+                        if (i > maxFloat)
+                        {
+                            maxFloat = i;
+                        }
+                    }
+
+                    view.bestPrediction = (float)maxFloat * 100;
+                   
                     TempData["ResultViewModel"] = view;
 
                     return Redirect("FileClass/Result");

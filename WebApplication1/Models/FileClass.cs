@@ -42,6 +42,9 @@ namespace WebApplication1.Models
 
         [Display(Name = "Scored Probabilities for Class: MCAT")]
         public string MCAT { get; set; }
+
+        [Display(Name = "Best prediction")]
+        public float bestPrediction { get; set; }
     }
 
 }

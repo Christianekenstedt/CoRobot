@@ -8,7 +8,7 @@
 
 <h3>Results</h3>
 <div>
-    <h4>ResultViewModel</h4>
+    <h4>{Algorithm prediction}</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,7 +16,15 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.scoredLabel)
+            @Html.DisplayFor(model => model.scoredLabel) 
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bestPrediction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bestPrediction)% probability
         </dd>
 
         <dt>
@@ -50,6 +58,8 @@
         <dd>
             @Html.DisplayFor(model => model.MCAT)
         </dd>
+
+        
 
     </dl>
 
